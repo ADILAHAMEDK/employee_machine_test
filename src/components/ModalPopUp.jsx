@@ -31,7 +31,13 @@ const ModalPopUp = ({ setClose, handleClose }) => {
       salary: Yup.number()
         .required("Salary is required")
         .positive("Salary must be positive"),
-      image: Yup.mixed().required("Image is required"),
+      image: Yup.mixed()
+        .nullable()
+        .test(
+          "fileType",
+          "Image is not required",
+          (value) => value === null || value instanceof File
+        ),
     }),
     onSubmit: (values) => {
       setSubmittedData((prev) => [...prev, values]);
@@ -173,9 +179,13 @@ const ModalPopUp = ({ setClose, handleClose }) => {
                   onBlur={formik.handleBlur}
                   className="text-xs"
                 />
-                {formik.touched.image && formik.errors.image && (
+                {formik.touched.image && formik.errors.image ? (
                   <div className="text-red-500 text-xs">
                     {formik.errors.image}
+                  </div>
+                ) : (
+                  <div className="text-red-500 text-xs">
+                    Image is not required
                   </div>
                 )}
               </div>
