@@ -148,7 +148,7 @@ const ModalPopUp = ({ setClose, handleClose }) => {
               <div className="w-full mb-2">
                 <label className="block text-xs sm:text-sm">Salary</label>
                 <input
-                  type="text"
+                  type="number"
                   name="salary"
                   value={formik.values.salary}
                   onChange={formik.handleChange}
