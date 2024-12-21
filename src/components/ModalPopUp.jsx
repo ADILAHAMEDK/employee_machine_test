@@ -26,7 +26,8 @@ const ModalPopUp = ({ setClose, handleClose }) => {
       designation: Yup.string().required("Designation is required"),
       dateOfJoining: Yup.date()
         .required("Date of Joining is required")
-        .nullable(),
+        .nullable()
+        .typeError("Invalid date format"),
       salary: Yup.number()
         .required("Salary is required")
         .positive("Salary must be positive"),
@@ -39,9 +40,9 @@ const ModalPopUp = ({ setClose, handleClose }) => {
   });
 
   return (
-    <div className="absolute z-10 w-full mx-auto shadow-md">
+    <div className="absolute z-10 w-full mx-auto">
       <div className="flex items-center justify-center mt-2 mr-6 sm:mr-0">
-        <div className="px-2 py-1 w-[300px] sm:w-[400px] rounded-md bg-white">
+        <div className="px-2 py-1 w-[300px] sm:w-[400px] rounded-md bg-white shadow-md">
           <div className="flex items-center justify-between">
             <h1 className="text-sm sm:text-base font-medium">
               Create New Employee
