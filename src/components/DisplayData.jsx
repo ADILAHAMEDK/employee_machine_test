@@ -49,7 +49,7 @@ const DisplayData = () => {
               <FaEye />
               <MdDelete />
             </div>
-            <div className="flex items-center justify-center gap-2 mb-2">
+            <div className="flex justify-between mb-2">
               <div className="">
                 <span className="block text-sm text-center">
                   {item.department}
@@ -63,7 +63,7 @@ const DisplayData = () => {
                 <span className="block text-sm text-[#666]">Designation</span>
               </div>
             </div>
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex justify-between">
               <div className="pr-5">
                 <span className="block text-sm text-center">
                   {item.dateOfJoining
