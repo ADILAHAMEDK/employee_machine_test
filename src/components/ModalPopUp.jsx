@@ -31,13 +31,7 @@ const ModalPopUp = ({ setClose, handleClose }) => {
       salary: Yup.number()
         .required("Salary is required")
         .positive("Salary must be positive"),
-      image: Yup.mixed()
-        .nullable()
-        .test(
-          "fileType",
-          "Image is not required",
-          (value) => value === null || value instanceof File
-        ),
+      image: Yup.mixed().nullable(),
     }),
     onSubmit: (values) => {
       setSubmittedData((prev) => [...prev, values]);
@@ -169,7 +163,9 @@ const ModalPopUp = ({ setClose, handleClose }) => {
                 )}
               </div>
               <div className="w-full mb-2">
-                <label className="block mb-0.5">Image<span className="text-xs"> (Optional)</span></label>
+                <label className="block mb-0.5 text-sm">
+                  Image<span className="text-xs"> (Optional)</span>
+                </label>
                 <input
                   type="file"
                   name="image"
