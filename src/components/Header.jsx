@@ -59,11 +59,9 @@ const Header = () => {
           <ModalPopUp setClose={setClose} handleClose={handleClose} />
         ) : null}
         <DisplayData />
+
         {submittedData.length === 0 ? (
-          <h1 className="text-center text-base sm:text-lg mt-9">Empty</h1>
-        ) : null}
-        {submittedData.length === 0 ? (
-          <h1 className="text-center text-base sm:text-lg">
+          <h1 className="text-center text-base sm:text-lg mt-36">
             No products available. Please add some products.
           </h1>
         ) : null}
