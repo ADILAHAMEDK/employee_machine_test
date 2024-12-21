@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import ModalPopUp from "./ModalPopUp";
 import DisplayData from "./DisplayData";
+import { Context } from "../context/Context";
 
 const Header = () => {
   const [close, setClose] = useState(false);
+  const { submittedData } = useContext(Context);
 
   const handleClose = () => {
     setClose(!close);
@@ -57,6 +59,14 @@ const Header = () => {
           <ModalPopUp setClose={setClose} handleClose={handleClose} />
         ) : null}
         <DisplayData />
+        {submittedData.length === 0 ? (
+          <h1 className="text-center text-base sm:text-lg mt-9">Empty</h1>
+        ) : null}
+        {submittedData.length === 0 ? (
+          <h1 className="text-center text-base sm:text-lg">
+            No products available. Please add some products.
+          </h1>
+        ) : null}
       </div>
     </div>
   );
