@@ -78,7 +78,7 @@ const DisplayData = () => {
                 <span className="block text-sm text-center">
                   ${item.salary}
                 </span>
-                <span className="block text-sm text-[#666]">Salery</span>
+                <span className="block text-sm text-[#666]">Salary</span>
               </div>
             </div>
           </div>
