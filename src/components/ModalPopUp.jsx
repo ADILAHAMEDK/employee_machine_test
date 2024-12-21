@@ -169,7 +169,7 @@ const ModalPopUp = ({ setClose, handleClose }) => {
                 )}
               </div>
               <div className="w-full mb-2">
-                <label className="block mb-0.5">Image</label>
+                <label className="block mb-0.5">Image<span className="text-xs"> (Optional)</span></label>
                 <input
                   type="file"
                   name="image"
@@ -179,13 +179,9 @@ const ModalPopUp = ({ setClose, handleClose }) => {
                   onBlur={formik.handleBlur}
                   className="text-xs"
                 />
-                {formik.touched.image && formik.errors.image ? (
+                {formik.touched.image && formik.errors.image && (
                   <div className="text-red-500 text-xs">
                     {formik.errors.image}
-                  </div>
-                ) : (
-                  <div className="text-red-500 text-xs">
-                    Image is not required
                   </div>
                 )}
               </div>
