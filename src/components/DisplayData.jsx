@@ -29,7 +29,7 @@ const DisplayData = () => {
                 <img
                   src={URL.createObjectURL(item.image)}
                   alt="img"
-                  className="w-12 h-12 rounded-full border-2 border-b-green-600"
+                  className="w-14 h-14 rounded-full border-2 border-b-green-600"
                 />
               ) : (
                 <div className="w-12 h-12 rounded-full bg-blue-950 text-white flex items-center justify-center">
